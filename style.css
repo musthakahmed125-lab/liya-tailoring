@@ -400,6 +400,66 @@ h2 {
     font-weight: 700;
 }
 
+/* PAID COURSES */
+.paid-courses-section {
+    background: var(--paper);
+}
+
+.paid-course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.paid-course-card {
+    position: relative;
+    padding: 30px;
+    background: #302629;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.paid-course-number {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    color: #d9a8b8;
+    font-family: "DM Serif Display", serif;
+    font-size: 30px;
+}
+
+.paid-course-card .course-icon {
+    margin-top: 22px;
+}
+
+.paid-course-card h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.paid-course-card p {
+    min-height: 72px;
+    color: #d8cccf;
+    font-size: 13px;
+    margin: 12px 0 18px;
+}
+
+.course-fee {
+    display: block;
+    color: #f1d9e1;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.paid-course-link {
+    color: #f0b9cb;
+    font-size: 13px;
+    font-weight: 700;
+}
+
 /* APPLICATION */
 .application-section {
     background: var(--paper);
@@ -701,6 +761,7 @@ footer {
     }
 
     .course-grid,
+    .paid-course-grid,
     .why-grid {
         grid-template-columns: 1fr;
     }
