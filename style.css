@@ -4,14 +4,25 @@
     box-sizing: border-box;
 }
 
+:root {
+    --ink: #302629;
+    --muted: #76696d;
+    --rose: #a34f70;
+    --rose-dark: #783b56;
+    --rose-soft: #f4e4e9;
+    --paper: #fffaf7;
+    --line: #eaded9;
+    --shadow: 0 18px 45px rgba(90, 40, 55, 0.1);
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
     font-family: "Poppins", sans-serif;
-    color: #332b2d;
-    background: #fffaf7;
+    color: var(--ink);
+    background: var(--paper);
     line-height: 1.7;
 }
 
@@ -31,8 +42,8 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 250, 247, 0.96);
-    border-bottom: 1px solid #eaded9;
+    background: rgba(255, 250, 247, 0.9);
+    border-bottom: 1px solid var(--line);
     backdrop-filter: blur(10px);
 }
 
@@ -50,7 +61,7 @@ a {
     gap: 10px;
     font-family: "DM Serif Display", serif;
     font-size: 25px;
-    color: #8c4962;
+    color: var(--rose-dark);
 }
 
 .logo img {
@@ -76,13 +87,13 @@ nav a {
 }
 
 nav a:hover {
-    color: #a64d70;
+    color: var(--rose);
 }
 
 .nav-button {
     padding: 11px 20px;
     border-radius: 30px;
-    background: #8c4962;
+    background: var(--rose-dark);
     color: white;
     font-size: 13px;
 }
@@ -96,8 +107,9 @@ nav a:hover {
     gap: 50px;
     padding: 80px 8%;
     background:
-        radial-gradient(circle at 85% 30%, #f2d9df 0, transparent 30%),
-        #fffaf7;
+        linear-gradient(120deg, rgba(255, 250, 247, 0.98) 25%, rgba(250, 235, 239, 0.75)),
+        radial-gradient(circle at 90% 20%, #efcbd7 0, transparent 34%),
+        var(--paper);
 }
 
 .hero-content {
@@ -106,7 +118,7 @@ nav a:hover {
 
 .small-title,
 .section-label {
-    color: #a34f70;
+    color: var(--rose);
     letter-spacing: 3px;
     font-size: 12px;
     font-weight: 700;
@@ -127,7 +139,7 @@ h2 span {
 
 .hero-text {
     max-width: 570px;
-    color: #75686c;
+    color: var(--muted);
     font-size: 17px;
 }
 
@@ -147,22 +159,22 @@ h2 span {
 }
 
 .primary {
-    background: #8c4962;
+    background: var(--rose-dark);
     color: white;
 }
 
 .primary:hover {
-    background: #6f354c;
+    background: #612f46;
     transform: translateY(-2px);
 }
 
 .secondary {
-    border: 1px solid #8c4962;
-    color: #8c4962;
+    border: 1px solid var(--rose-dark);
+    color: var(--rose-dark);
 }
 
 .secondary:hover {
-    background: #8c4962;
+    background: var(--rose-dark);
     color: white;
 }
 
@@ -170,9 +182,9 @@ h2 span {
 .hero-card {
     position: relative;
     width: 330px;
-    min-height: 390px;
+    aspect-ratio: 4 / 5;
     overflow: hidden;
-    background: #8c4962;
+    background: var(--rose-dark);
     color: white;
     border-radius: 160px 160px 20px 20px;
     box-shadow: 0 25px 60px rgba(90, 40, 55, 0.22);
@@ -182,9 +194,9 @@ h2 span {
 .hero-video {
     width: 100%;
     height: 100%;
-    min-height: 390px;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    background: #302629;
 }
 
 .video-sound-button {
@@ -235,7 +247,7 @@ h2 span {
 
 /* SECTIONS */
 .section {
-    padding: 100px 0;
+    padding: 110px 0;
 }
 
 .about-grid {
@@ -248,14 +260,16 @@ h2 span {
 .about-image {
     height: 500px;
     border-radius: 15px;
-    background: #ead1d8;
-    padding: 20px;
+    background: #f8eeed;
+    padding: 12px;
+    box-shadow: var(--shadow);
 }
 
 .about-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background: #fffaf7;
     border-radius: 10px;
     display: block;
 }
@@ -268,7 +282,7 @@ h2 span {
     background: #f6e8eb;
     border: 1px dashed #b77b91;
     font-size: 100px;
-    color: #a34f70;
+    color: var(--rose);
     border-radius: 10px;
 }
 
@@ -281,7 +295,7 @@ h2 {
 }
 
 .about-content > p {
-    color: #74686b;
+    color: var(--muted);
     margin-bottom: 15px;
 }
 
@@ -298,13 +312,13 @@ h2 {
 }
 
 .features span {
-    color: #a34f70;
+    color: var(--rose);
     margin-right: 8px;
 }
 
 /* COURSES */
 .courses-section {
-    background: #f6eeeb;
+    background: linear-gradient(180deg, #f8eeed 0%, #f5e5e8 100%);
 }
 
 .section-heading {
@@ -314,21 +328,21 @@ h2 {
 }
 
 .section-heading > p:last-child {
-    color: #76696d;
+    color: var(--muted);
 }
 
 .course-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
 .course-card {
     position: relative;
     background: white;
-    padding: 35px 25px;
+    padding: 28px;
     border-radius: 10px;
-    border: 1px solid #eaded9;
+    border: 1px solid var(--line);
     transition: 0.3s;
 }
 
@@ -338,14 +352,14 @@ h2 {
 }
 
 .course-card.featured {
-    border: 2px solid #a34f70;
+    border: 2px solid var(--rose);
 }
 
 .popular {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: #a34f70;
+    background: var(--rose);
     color: white;
     padding: 4px 9px;
     border-radius: 20px;
@@ -355,7 +369,17 @@ h2 {
 
 .course-icon {
     font-size: 38px;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
+}
+
+.course-card img {
+    width: 100%;
+    height: 180px;
+    display: block;
+    object-fit: contain;
+    background: #f8eeed;
+    border-radius: 7px;
+    margin: 16px 0 18px;
 }
 
 .course-card h3 {
@@ -365,20 +389,20 @@ h2 {
 }
 
 .course-card p {
-    color: #76696d;
+    color: var(--muted);
     font-size: 13px;
     margin: 12px 0 25px;
 }
 
 .course-card a {
-    color: #a34f70;
+    color: var(--rose);
     font-size: 13px;
     font-weight: 700;
 }
 
 /* APPLICATION */
 .application-section {
-    background: #fffaf7;
+    background: var(--paper);
 }
 
 .application-grid {
@@ -389,16 +413,16 @@ h2 {
 }
 
 .application-intro > p:last-child {
-    color: #76696d;
+    color: var(--muted);
     max-width: 430px;
 }
 
 .application-form {
     background: white;
-    border: 1px solid #eaded9;
+    border: 1px solid var(--line);
     border-radius: 10px;
     padding: 35px;
-    box-shadow: 0 18px 40px rgba(90, 40, 55, 0.08);
+    box-shadow: var(--shadow);
 }
 
 .application-form label {
@@ -430,8 +454,8 @@ h2 {
 .application-form input:focus,
 .application-form select:focus,
 .application-form textarea:focus {
-    outline: 2px solid #c99aaa;
-    border-color: #a34f70;
+    outline: 2px solid #e6bdcb;
+    border-color: var(--rose);
 }
 
 .application-submit {
@@ -441,7 +465,7 @@ h2 {
 }
 
 .application-status {
-    color: #a34f70;
+    color: var(--rose);
     font-size: 12px;
     min-height: 18px;
     margin: 12px 0 0;
@@ -450,7 +474,7 @@ h2 {
 
 /* WHY US */
 .why-section {
-    background: #fffaf7;
+    background: var(--paper);
 }
 
 .why-grid {
@@ -461,11 +485,11 @@ h2 {
 
 .why-card {
     padding: 30px;
-    border-top: 2px solid #c99aaa;
+    border-top: 2px solid #d9a8b8;
 }
 
 .why-number {
-    color: #a34f70;
+    color: var(--rose);
     font-family: "DM Serif Display", serif;
     font-size: 30px;
 }
@@ -476,13 +500,13 @@ h2 {
 }
 
 .why-card p {
-    color: #76696d;
+    color: var(--muted);
     font-size: 13px;
 }
 
 /* CTA */
 .cta {
-    background: #8c4962;
+    background: linear-gradient(135deg, var(--rose-dark), #a75573);
     color: white;
     text-align: center;
     padding: 85px 20px;
@@ -502,7 +526,7 @@ h2 {
 
 .white {
     background: white;
-    color: #8c4962;
+    color: var(--rose-dark);
     margin-top: 25px;
 }
 
@@ -512,7 +536,7 @@ h2 {
 
 /* CONTACT */
 .contact-section {
-    background: #f6eeeb;
+    background: #f8eeed;
 }
 
 .contact-grid {
@@ -523,7 +547,7 @@ h2 {
 }
 
 .contact-grid > div:first-child p:last-child {
-    color: #76696d;
+    color: var(--muted);
 }
 
 .contact-item {
@@ -542,13 +566,13 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f2dfe5;
+    background: var(--rose-soft);
     border-radius: 50%;
 }
 
 .contact-item small {
     display: block;
-    color: #a34f70;
+    color: var(--rose);
     font-size: 9px;
     letter-spacing: 1px;
 }
@@ -563,7 +587,7 @@ h2 {
     display: block;
     text-align: center;
     padding: 16px;
-    background: #8c4962;
+    background: var(--rose-dark);
     color: white;
     border-radius: 7px;
     margin-top: 20px;
@@ -632,10 +656,6 @@ footer {
         padding: 70px 5%;
     }
 
-    .course-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
     .why-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -664,7 +684,6 @@ footer {
 
     .hero-card {
         width: 280px;
-        min-height: 330px;
     }
 
     .about-grid,
@@ -684,6 +703,10 @@ footer {
     .course-grid,
     .why-grid {
         grid-template-columns: 1fr;
+    }
+
+    .course-card img {
+        height: 210px;
     }
 
     .footer-content {

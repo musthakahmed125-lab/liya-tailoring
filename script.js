@@ -54,7 +54,7 @@ const initializePage = () => {
     ].join('\n');
 
     if (applicationStatus) applicationStatus.textContent = 'Opening WhatsApp...';
-    window.open(`https://wa.me/946027583?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/94726027583?text=${encodeURIComponent(message)}`, '_blank');
   });
 };
 
