@@ -1209,12 +1209,30 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 950px) {
+    .nav-container {
+        min-height: 72px;
+        padding: 10px 0;
+    }
+
     nav {
         display: none;
     }
 
+    .logo {
+        min-width: 0;
+    }
+
+    .logo span {
+        font-size: clamp(18px, 3vw, 24px);
+    }
+
     .hero {
-        padding: 70px 5%;
+        padding: 70px 5% 50px;
+        gap: 30px;
+    }
+
+    .hero-content {
+        max-width: 100%;
     }
 
     .why-grid {
@@ -1231,20 +1249,53 @@ footer {
         display: none;
     }
 
+    .nav-container {
+        justify-content: center;
+        height: auto;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
     .hero {
         min-height: auto;
         flex-direction: column;
         text-align: center;
-        padding: 70px 5%;
+        padding: 52px 18px 40px;
+    }
+
+    .small-title,
+    .section-label {
+        letter-spacing: 1.5px;
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 12vw, 58px);
+        line-height: 1.08;
+    }
+
+    .hero-text {
+        font-size: 15px;
     }
 
     .hero-buttons {
         justify-content: center;
         flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
     }
 
     .hero-card {
-        width: 280px;
+        width: min(100%, 320px);
+        border-radius: 26px;
     }
 
     .about-grid,
@@ -1254,13 +1305,15 @@ footer {
     }
 
     .about-image {
-        height: 350px;
+        height: 300px;
     }
 
-    h2 {
-        font-size: 40px;
+    h2,
+    .section-heading h2 {
+        font-size: 34px;
     }
 
+    .course-landing-grid,
     .course-grid,
     .paid-course-grid,
     .why-grid {
@@ -1273,5 +1326,9 @@ footer {
 
     .footer-content {
         flex-direction: column;
+    }
+
+    .container {
+        width: 92%;
     }
 }
