@@ -1,20 +1,41 @@
 $projectPath = Split-Path -Parent $MyInvocation.MyCommand.Path
-$trackedFiles = @('index.html', 'style.css', 'script.js')
 $pendingChange = $false
+
+$gitExe = $null
+$gitCandidates = @(
+    'C:\Program Files\Git\cmd\git.exe',
+    'C:\Program Files\Git\bin\git.exe'
+)
+
+foreach ($candidate in $gitCandidates) {
+    if (Test-Path $candidate) {
+        $gitExe = $candidate
+        break
+    }
+}
+
+if (-not $gitExe) {
+    try {
+        $gitExe = (Get-Command git -ErrorAction Stop).Source
+    }
+    catch {
+        throw "Git is not installed or not available on PATH. Please install Git for Windows and restart VS Code."
+    }
+}
 
 function Sync-Changes {
     Set-Location $projectPath
 
-    $changes = git status --short -- $trackedFiles
+    $changes = & $gitExe status --porcelain
     if (-not $changes) {
         return
     }
 
-    git add -- $trackedFiles
+    & $gitExe add --all
     $commitMessage = "Auto-sync website changes $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
-    git commit -m $commitMessage
+    & $gitExe commit -m $commitMessage
     if ($LASTEXITCODE -eq 0) {
-        git push origin main
+        & $gitExe push origin main
     }
 }
 

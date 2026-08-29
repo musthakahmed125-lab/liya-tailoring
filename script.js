@@ -1,4 +1,37 @@
+const animateTextReveal = () => {
+  const targets = document.querySelectorAll('[data-animate-text]');
+
+  targets.forEach((element) => {
+    const text = element.textContent.trim();
+    if (!text) return;
+
+    const chars = [...text].map((char, index) => {
+      const span = document.createElement('span');
+      span.className = 'reveal-char';
+      span.style.setProperty('--index', index);
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      return span;
+    });
+
+    element.textContent = '';
+    chars.forEach((char) => element.appendChild(char));
+  });
+};
+
 const initializePage = () => {
+  animateTextReveal();
+
+  const ubeToggle = document.querySelector('.ube-toggle');
+  const ubeCard = document.querySelector('.ube-card');
+
+  if (ubeToggle && ubeCard) {
+    ubeToggle.addEventListener('click', () => {
+      const isOpen = ubeCard.classList.toggle('open');
+      ubeToggle.setAttribute('aria-expanded', String(isOpen));
+      ubeToggle.querySelector('.ube-toggle-icon').textContent = isOpen ? '−' : '+';
+    });
+  }
+
   const links = document.querySelectorAll('a[href^="#"]');
 
   links.forEach((link) => {
