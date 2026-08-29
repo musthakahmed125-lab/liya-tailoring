@@ -760,46 +760,52 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    min-height: 220px;
-    border-radius: 24px;
+    gap: 18px;
+    min-height: 160px;
+    border-radius: 18px;
     background: linear-gradient(135deg, #ff3b3b 0%, #d90429 100%);
-    box-shadow: 0 24px 48px rgba(217, 4, 41, 0.18);
-    padding: 30px;
+    box-shadow: 0 18px 36px rgba(217, 4, 41, 0.16);
+    padding: 20px 22px;
     color: white;
     transition: transform 0.25s ease;
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .youtube-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
 }
 
 .youtube-icon {
-    width: 86px;
-    height: 86px;
+    width: 58px;
+    height: 58px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.18);
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 700;
+    flex-shrink: 0;
 }
 
 .youtube-text {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
+    line-height: 1.2;
 }
 
 .youtube-text span {
-    font-size: 15px;
+    font-size: 12px;
     opacity: 0.9;
+    letter-spacing: 0.3px;
 }
 
 .youtube-text strong {
     font-family: "DM Serif Display", serif;
-    font-size: 36px;
+    font-size: 26px;
     font-weight: 400;
 }
 
@@ -982,18 +988,12 @@ h2 {
 .public-feedback-form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
 .feedback-field-row {
-    display: flex;
-    gap: 16px;
-}
-
-.feedback-field-row.two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    display: block;
+    width: 100%;
 }
 
 .public-feedback-form input,
@@ -1001,7 +1001,7 @@ h2 {
     width: 100%;
     border: 1px solid #e9c9d7;
     border-radius: 12px;
-    padding: 14px 16px;
+    padding: 12px 14px;
     background: #fff;
     color: var(--ink);
     font: inherit;
