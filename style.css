@@ -927,6 +927,9 @@ h2 {
     border-radius: 18px;
     padding: 28px 24px;
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .feedback-card.highlight {
@@ -1316,8 +1319,19 @@ footer {
     .course-landing-grid,
     .course-grid,
     .paid-course-grid,
-    .why-grid {
+    .why-grid,
+    .feedback-grid {
         grid-template-columns: 1fr;
+    }
+
+    .feedback-card {
+        padding: 20px 18px;
+        border-radius: 14px;
+    }
+
+    .feedback-card p {
+        font-size: 14px;
+        line-height: 1.7;
     }
 
     .course-card img {
