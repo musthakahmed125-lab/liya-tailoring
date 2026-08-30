@@ -619,20 +619,22 @@ h2 {
 
 .course-card {
     position: relative;
-    background: white;
+    background: #ffffff;
     padding: 28px;
-    border-radius: 10px;
-    border: 1px solid var(--line);
+    border-radius: 8px;
+    border: 1px solid #e2e6eb;
+    box-shadow: 0 8px 24px rgba(48, 38, 41, 0.07);
     transition: 0.3s;
 }
 
 .course-card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 18px 40px rgba(90, 40, 55, 0.12);
+    box-shadow: 0 18px 40px rgba(48, 38, 41, 0.14);
 }
 
 .course-card.featured {
     border: 2px solid var(--rose);
+    background: #fff8fa;
 }
 
 .popular {
@@ -657,7 +659,7 @@ h2 {
     height: 180px;
     display: block;
     object-fit: contain;
-    background: #f8eeed;
+    background: #f4f6f8;
     border-radius: 7px;
     margin: 16px 0 18px;
 }
