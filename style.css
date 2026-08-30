@@ -31,11 +31,6 @@ body {
     overflow-x: hidden;
 }
 
-.home-page .courses-section,
-.home-page #paid-courses {
-    display: none !important;
-}
-
 body::before,
 body::after {
     content: "";
