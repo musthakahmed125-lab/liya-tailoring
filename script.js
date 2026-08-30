@@ -82,6 +82,7 @@ const initializePage = () => {
       '',
       `Name: ${formData.get('name')}`,
       `Phone: ${formData.get('phone')}`,
+      `Address: ${formData.get('address')}`,
       `Course: ${formData.get('course')}`,
       `Message: ${formData.get('message') || 'No additional message'}`
     ].join('\n');
