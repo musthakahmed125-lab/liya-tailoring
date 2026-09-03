@@ -39,6 +39,9 @@ function Sync-Changes {
     }
 }
 
+# Sync changes that existed before the watcher started.
+Sync-Changes
+
 $watcher = New-Object IO.FileSystemWatcher
 $watcher.Path = $projectPath
 $watcher.Filter = '*.*'

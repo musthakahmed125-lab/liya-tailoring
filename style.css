@@ -26,9 +26,12 @@ body {
     font-family: "Poppins", sans-serif;
     color: var(--ink);
     background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-mid) 28%, var(--bg-soft) 100%);
+    background-size: 180% 180%;
+    animation: backgroundShift 18s ease-in-out infinite alternate;
     line-height: 1.7;
     position: relative;
     overflow-x: hidden;
+    isolation: isolate;
 }
 
 .home-page .courses-section,
@@ -40,40 +43,55 @@ body::before,
 body::after {
     content: "";
     position: fixed;
-    inset: auto;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.45;
-    z-index: -1;
+    filter: blur(90px);
+    opacity: 0.7;
+    z-index: -2;
+    pointer-events: none;
     animation: floatGlow 18s ease-in-out infinite alternate;
 }
 
 body::before {
-    width: 420px;
-    height: 420px;
-    background: rgba(255, 174, 202, 0.5);
-    top: 8%;
-    left: -8%;
+    width: 440px;
+    height: 440px;
+    top: 7%;
+    left: -7%;
+    background: radial-gradient(circle, rgba(255, 176, 208, 0.9), rgba(255, 176, 208, 0.18) 52%, transparent 72%);
 }
 
 body::after {
-    width: 460px;
-    height: 460px;
-    background: rgba(242, 214, 221, 0.7);
+    width: 520px;
+    height: 520px;
     right: -8%;
-    bottom: 10%;
-    animation-delay: 1.5s;
+    bottom: 8%;
+    background: radial-gradient(circle, rgba(246, 205, 220, 0.95), rgba(246, 205, 220, 0.2) 52%, transparent 72%);
+    animation-delay: 1.8s;
+}
+
+@keyframes backgroundShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 60% 40%;
+    }
+    100% {
+        background-position: 100% 60%;
+    }
 }
 
 @keyframes floatGlow {
     0% {
         transform: translate(0, 0) scale(1);
     }
-    50% {
-        transform: translate(30px, -20px) scale(1.08);
+    35% {
+        transform: translate(35px, -26px) scale(1.07);
+    }
+    70% {
+        transform: translate(-22px, 26px) scale(0.92);
     }
     100% {
-        transform: translate(-25px, 18px) scale(0.96);
+        transform: translate(18px, -15px) scale(1.04);
     }
 }
 
